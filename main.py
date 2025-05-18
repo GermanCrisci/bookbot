@@ -1,4 +1,4 @@
-from stats import get_num_words
+from stats import *
 
 def get_book_text(filepath):
     """
@@ -24,7 +24,10 @@ def main():
     book_text = get_book_text(filepath)
     
     # Print the first 500 characters of the book
-    print(f"{get_num_words(book_text)} words found in the document.")
+    # print(f"{get_num_words(book_text)} words found in the document.")
     
+    # Print the first 500 characters of the book
+    print(f"{get_number_characters(book_text)}.")
+
 if __name__ == "__main__":
     main()
