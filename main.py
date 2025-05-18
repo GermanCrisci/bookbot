@@ -1,4 +1,5 @@
 from stats import *
+import sys
 
 def get_book_text(filepath):
     """
@@ -17,11 +18,16 @@ def main():
     """
     Main function to execute the script.
     """
-    # Define the path to the text file
-    filepath = 'books/frankenstein.txt'
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
     
-    # Get the content of the book
-    book_text = get_book_text(filepath)
+    filepath = sys.argv[1]
+    
+    try:
+        book_text = get_book_text(filepath)
+    except:
+        print("Error: Couldn't get book contents, did you send a valid file path?")
+        exit()
     
     print("============ BOOKBOT ============")
     print(f"Analyzing book found at {filepath}...")
